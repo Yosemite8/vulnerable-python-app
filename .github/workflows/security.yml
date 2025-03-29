@@ -1,0 +1,21 @@
+name: Datadog Code Security (SCA + SAST)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  datadog-code-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Datadog SCA + SAST
+        uses: DataDog/datadog-static-analysis-github-action@v1
+        with:
+          dd_api_key: ${{ secrets.DD_API_KEY }}
+          dd_app_key: ${{ secrets.DD_APP_KEY }}
+          dd_service: vulnerable-python-app
+          dd_env: workshop
+          dd_site: datadoghq.com
