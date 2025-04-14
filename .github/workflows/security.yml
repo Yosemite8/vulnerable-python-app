@@ -1,9 +1,48 @@
-name: Datadog Code Security (SCA + SAST)
+name: Build and Deploy to Fargate
 
 on:
   push:
-  pull_request:
 
 jobs:
-### Add Security Jobs from here###
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      ECR_REGISTRY: "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com"
+      IMAGE_NAME: "vuln-app-${{ secrets.USER_ID }}"
+    
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
+            | docker login --username AWS --password-stdin $ECR_REGISTRY
+
+      - name: Build Docker image
+        run: |
+          docker build -t $IMAGE_NAME:latest .
+
+      - name: Tag image for ECR
+        run: |
+          docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$IMAGE_NAME:latest
+
+      - name: Push image to ECR
+        run: |
+          docker push $ECR_REGISTRY/$IMAGE_NAME:latest
+
+      - name: Run ECS task with new image
+        run: |
+          aws ecs run-task \
+            --cluster ${{ secrets.ECS_CLUSTER_NAME }} \
+            --launch-type FARGATE \
+            --network-configuration "awsvpcConfiguration={subnets=[${{ secrets.SUBNET_ID }}],securityGroups=[${{ secrets.SECURITY_GROUP_ID }}],assignPublicIp=ENABLED}" \
+            --task-definition ${{ secrets.ECS_TASK_DEFINITION_NAME }} \
+            --count 1
