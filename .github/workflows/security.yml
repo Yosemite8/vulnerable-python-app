@@ -1,5 +1,6 @@
 name: Build and Deploy to Fargate
 
+## Remove Comment when trigger CI
 # on:
 #   push:
 
@@ -26,10 +27,10 @@ jobs:
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
             | docker login --username AWS --password-stdin $ECR_REGISTRY
 
-      # Optional: Add SCA (Software Composition Analysis) step here
+      # Task: Add SCA (Software Composition Analysis) step here
       # Example: Datadog SCA GitHub Action
 
-      # Optional: Add SAST (Static Application Security Testing) step here
+      # Task: Add SAST (Static Application Security Testing) step here
       # Example: Datadog SAST GitHub Action
 
       - name: Build Docker image
