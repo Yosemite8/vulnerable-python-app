@@ -1,4 +1,4 @@
-# 05-sql-injection
+# CWE-89: SQL Injection vulnerability
 
 This snippet demonstrates a **SQL Injection vulnerability (CWE-89)** using unsanitized user input embedded in a raw SQL query.
 
