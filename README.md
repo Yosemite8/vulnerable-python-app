@@ -9,7 +9,7 @@ This simple Python/Flask app contains intentionally vulnerable code. You will an
 
 In this workshop, you will:
 
-- Work with intentionally vulnerable Python code
+- Work with intentionally vulnerable Python code (Pick some CWEs from [OWASP Benchmark](https://owasp.org/www-project-benchmark/))
 - Push commits to trigger GitHub Actions
 - Run SCA (Software Composition Analysis) and SAST (Static Application Security Testing)
 - Observe results in Datadog Code Security (SCA, SAST and more extensibly IAST, APP and API Protection)
@@ -79,8 +79,8 @@ Set the following secrets:
 | `AWS_SECRET_ACCESS_KEY` | (For deployment) AWS credentials (**hands-on host prepares a least pliviledged IAM user for CI for attendees**)|
 | `AWS_REGION` | AWS region (e.g., `eu-west-1`) |
 | `AWS_ACCOUNT_ID` | Your AWS account ID |
-| `ECS_CLUSTER_NAME` | Target ECS cluster name  (**hands-on host inform the name of cluster**) |
-| `ECS_SERVICE_NAME` | Target ECS service name (**hands-on host inform the name of service**)|
+| `ECS_CLUSTER_NAME` | Target ECS cluster name  (**hands-on host informs the name of cluster**) |
+| `ECS_SERVICE_NAME` | Target ECS service name (**hands-on host informs the name of service**)|
 | `USER_ID` | A unique suffix to isolate your deployment (**hands-on host informs the USER_ID for attendees**)|
 
 ---
