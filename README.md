@@ -21,10 +21,10 @@ In this workshop, you will:
 
 ```
 .
-├── .github/workflows/           # GitHub Actions workflow for CI and scanning
-├── skelton/                     # Baseline Flask app to reset to clean state
-├── vuln-lab/
-│   └── snippets/
+├── .github/workflows/           
+│       └── security.yml             # GitHub Actions workflow for CI and scanning
+├── skelton/                         # Baseline Flask app to reset to clean state
+├── snippets/
 │       ├── 01-command-injection/
 │       ├── 02-weak-hash/
 │       ├── 03-insecure-deserialization/
