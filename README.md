@@ -29,6 +29,10 @@ In this workshop, you will:
 │       ├── 02-weak-hash/
 │       ├── 03-insecure-deserialization/
 │       └── ... (more vulnerabilities)
+├── app.py
+├── dockerfile
+├── requirements.txt
+├── README.md (the file you are reading)
 ```
 
 Each snippet is self-contained and can be copied into the root `app.py` as needed.
@@ -71,13 +75,13 @@ Set the following secrets:
 |------|-------------|
 | `DD_API_KEY` | Your Datadog API key |
 | `DD_APP_KEY` | Your Datadog application key |
-| `AWS_ACCESS_KEY_ID` | (For deployment) AWS credentials |
-| `AWS_SECRET_ACCESS_KEY` | (For deployment) AWS credentials |
-| `AWS_REGION` | AWS region (e.g., `ap-northeast-1`) |
+| `AWS_ACCESS_KEY_ID` | (For deployment) AWS credentials  (**hands-on host prepares a least pleviledged IAM user for CI for attendees**) |
+| `AWS_SECRET_ACCESS_KEY` | (For deployment) AWS credentials (**hands-on host prepares a least pleviledged IAM user for CI for attendees**)|
+| `AWS_REGION` | AWS region (e.g., `eu-west-1`) |
 | `AWS_ACCOUNT_ID` | Your AWS account ID |
-| `ECS_CLUSTER_NAME` | Target ECS cluster name |
-| `ECS_SERVICE_NAME` | Target ECS service name |
-| `USER_ID` | A unique suffix to isolate your deployment |
+| `ECS_CLUSTER_NAME` | Target ECS cluster name  (**hands-on host inform the name of cluster**) |
+| `ECS_SERVICE_NAME` | Target ECS service name (**hands-on host inform the name of service**)|
+| `USER_ID` | A unique suffix to isolate your deployment (**hands-on host informs the USER_ID for attendees**)|
 
 ---
 
