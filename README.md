@@ -1,7 +1,7 @@
-# Vulnerable Python App (for SCA & SAST Workshop)
+# Vulnerable Python App For Code Security Workshop
 
-This simple Python/Flask app contains intentionally vulnerable code.  
-You will analyze it using [Datadog Code Security](https://docs.datadoghq.com/code_security/) via GitHub Actions.
+
+This simple Python/Flask app contains intentionally vulnerable code. You will analyze it using [Datadog Code Security](https://docs.datadoghq.com/code_security/) via GitHub Actions.
 
 ---
 
@@ -12,7 +12,7 @@ In this workshop, you will:
 - Work with intentionally vulnerable Python code
 - Push commits to trigger GitHub Actions
 - Run SCA (Software Composition Analysis) and SAST (Static Application Security Testing)
-- Observe results in Datadog Code Security
+- Observe results in Datadog Code Security (SCA, SAST and more extensibly IAST, APP and API Protection)
 - Fix vulnerabilities and verify the results
 
 ---
