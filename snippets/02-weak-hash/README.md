@@ -28,6 +28,15 @@ curl "http://[Your Service Public IP Address]/hash?input=password123"
 - This application uses the MD5 hash function, which is broken due to known collision vulnerabilities.
 - An attacker can craft inputs that produce the same MD5 hash, undermining integrity checks or signature schemes.
 
+## 🚨 Note on Git Push
+
+When you push this code to GitHub, you might see a warning that says something like:
+
+> "Potential secret detected in the code (MD5 hash pattern)"
+
+This is a false positive. The MD5 hash values used in this snippet are **intentionally included** as part of the vulnerable demonstration and **do not represent real secrets**.  
+You can safely ignore this warning for this lab.
+
 ## ✅ Fix Suggestion
 
 - Replace MD5 with a secure hashing algorithm such as SHA-256 or use cryptographic libraries that are actively maintained (e.g., hashlib with `sha256`, or external libraries like `cryptography`).
