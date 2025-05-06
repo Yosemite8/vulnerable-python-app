@@ -31,6 +31,12 @@ query = f"SELECT * FROM users WHERE first_name = '{name}'"
      http://[Your Service Public IP Address]/user?name=' OR '1'='1
      ```
 
+     > ⚠️ **Note:** The above URL must be **URL-encoded** to work in browsers or scripts. For example:
+     >
+     > ```
+     > http://[Your Service Public IP Address]/user?name=%27%20OR%20%271%27%3D%271
+     > ```
+
    This should return all user records in the database.
 
 ## 🗂 Data Initialization
