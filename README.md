@@ -1,6 +1,5 @@
 # Vulnerable Python App For Code Security Workshop
 
-
 This simple Python/Flask app contains intentionally vulnerable code. You will analyze it using [Datadog Code Security](https://docs.datadoghq.com/code_security/) via GitHub Actions.
 
 ---
@@ -66,7 +65,24 @@ cd YOUR_PRIVATE_REPO
 
 ---
 
-### 2. Set GitHub Secrets
+### 2. Integrate your repository with Datadog via GitHub App
+
+Before configuring secrets or pushing code, link your GitHub repository with Datadog using the official GitHub App:
+
+1. Go to the [Datadog GitHub App installation page](https://app.datadoghq.com/integrations/github/configuration).
+2. Click **"+ Connect GitHub Account"**.
+3. Choose GitHub account type, and add permissions required.
+4. Click create GitHub App:
+   - Configure GitHub App Name
+   - Choose **"Only select repositories"** (recommended).
+     - Select your newly created private repository.
+   - Complete the installation.
+
+> This integration allows Datadog to receive GitHub Actions scan results and display them in the Code Security dashboard.
+
+---
+
+### 3. Set GitHub Secrets
 
 In your new **private** repository, go to **Settings > Secrets and variables > Actions**  
 Set the following secrets:
@@ -75,8 +91,8 @@ Set the following secrets:
 |------|-------------|
 | `DD_API_KEY` | Your Datadog API key |
 | `DD_APP_KEY` | Your Datadog application key |
-| `AWS_ACCESS_KEY_ID` | (For deployment) AWS credentials  (**hands-on host prepares a least pliviledged IAM user for CI for attendees**) |
-| `AWS_SECRET_ACCESS_KEY` | (For deployment) AWS credentials (**hands-on host prepares a least pliviledged IAM user for CI for attendees**)|
+| `AWS_ACCESS_KEY_ID` | (For deployment) AWS credentials  (**hands-on host prepares a least privileged IAM user for CI for attendees**) |
+| `AWS_SECRET_ACCESS_KEY` | (For deployment) AWS credentials (**hands-on host prepares a least privileged IAM user for CI for attendees**)|
 | `AWS_REGION` | AWS region (e.g., `eu-west-1`) |
 | `AWS_ACCOUNT_ID` | Your AWS account ID |
 | `ECS_CLUSTER_NAME` | Target ECS cluster name  (**hands-on host informs the name of cluster**) |
@@ -85,7 +101,7 @@ Set the following secrets:
 
 ---
 
-### 3. Start the CI/CD flow and verify baseline deployment
+### 4. Start the CI/CD flow and verify baseline deployment
 
 Before adding any vulnerabilities, first deploy the clean skeleton app to verify that your CI/CD pipeline is working correctly.
 
@@ -115,7 +131,7 @@ Once you’ve pushed the change:
 
 ---
 
-### 4. Confirm the deployed application on AWS Fargate
+### 5. Confirm the deployed application on AWS Fargate
 
 To access your deployed Flask app, check the public IP address or DNS name of the ECS service:
 
@@ -129,4 +145,5 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 > The app should show: `Flask app is running. Add your first vulnerability!`
 
 ---
-Now you are ready to start the Code Security Hands-on! 🚀 
+
+Now you are ready to start the Code Security Hands-on! 🚀
