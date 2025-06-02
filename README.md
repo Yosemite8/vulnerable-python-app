@@ -23,7 +23,7 @@ In this workshop, you will:
 ├── .github/workflows/           
 │       └── security.yml             # GitHub Actions workflow for CI and scanning
 ├── skelton/                         # Baseline Flask app to reset to clean state
-├── snippets/
+├── snippets/                        # Vulnerable code snippets
 │       ├── 01-command-injection/
 │       ├── 02-weak-hash/
 │       ├── 03-insecure-deserialization/
@@ -101,7 +101,33 @@ Set the following secrets:
 
 ---
 
-### 4. Start the CI/CD flow and verify baseline deployment
+### 4. Set Repository Configuration
+
+Before adding Datadog Code Security features (Static SCA/SAST), we want to exclude the unnecessary directories 
+```
+.
+├── .github/workflows/           
+│       └── security.yml             
+├── skelton/                         
+├── snippets/                        
+```
+
+To do that, go to [Code Security] > [Settings] > [Repository Settings](https://app.datadoghq.com/security/configuration/code-security/settings)
+Scroll down to Repository Settings and select your private repository in the table.
+
+Under the Repository Configuration add below code block to exclude these folders from SCA/SAST scanning
+```
+rulesets:
+  # This ignores test files
+  - python-security:
+    ignore:
+      - "**/snippets/**"
+      - "**/skelton/**"
+      - "**/.github/**"
+```
+
+---
+### 5. Start the CI/CD flow and verify baseline deployment
 
 Before adding any vulnerabilities, first deploy the clean skeleton app to verify that your CI/CD pipeline is working correctly.
 
@@ -131,7 +157,7 @@ Once you’ve pushed the change:
 
 ---
 
-### 5. Confirm the deployed application on AWS Fargate
+### 6. Confirm the deployed application on AWS Fargate
 
 To access your deployed Flask app, check the public IP address or DNS name of the ECS service:
 
@@ -147,3 +173,14 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 ---
 
 Now you are ready to start the Code Security Hands-on! 🚀
+---
+### Disclaimer
+This repository is intended solely for educational and demonstration purposes related to application security.
+It contains intentionally vulnerable code examples to help learners understand common software weaknesses and how to mitigate them.
+
+Use this code at your own risk.
+
+We do not guarantee the safety, reliability, or suitability of this repository for any production or non-training environment.
+By using this material, you agree that the authors and contributors are not responsible for any damage, loss, or legal consequences that may result from misuse or unintended deployment of the contents.
+
+Please ensure you use this repository in a safe, isolated, and authorized environment.
