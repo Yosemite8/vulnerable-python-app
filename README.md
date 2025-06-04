@@ -190,7 +190,7 @@ In Lab#1, your task is to create CI jobs in GitHub Actions for Static SCA(Softwa
 
 Here is the docs to refer
 - [docs link](https://docs.datadoghq.com/security/code_security/)
-> Note
+
 > See docs instruction per SCA, SAST accordingly.
 
 ---
@@ -200,13 +200,13 @@ In Lab#2, your task is to modify your ECS Task Definition to instrument your vul
 
 ![Lab2](./img/003.png) 
 
-> Note \n
+
 > ECS Task Definition is modifiable in multiple ways, AWS Managed Console, IaC etc, Choose your preferable way. Ask Lab Master should make sure for required permissions to perform the modification in advance. If you face permission issues, ask Lab Master.
 
 Here is the docs to refer
 - [docs link](https://docs.datadoghq.com/security/guide/aws_fargate_config_guide/?tab=amazonecs#cloud-security-management)
 
-> Note 
+ 
 > To activate IAST for Flask application this line needs to be added ([Reference Link](https://ddtrace.readthedocs.io/en/stable/integrations.html#flask))
 ``` 
 from flask import Flask
