@@ -32,6 +32,7 @@ In this workshop, you will:
 ├── dockerfile
 ├── requirements.txt
 ├── README.md (the file you are reading)
+├── img/                             # image files to enrich this README                           
 ```
 
 Each snippet is self-contained and can be copied into the root `app.py` as needed.
@@ -124,6 +125,7 @@ rulesets:
       - "**/snippets/**"
       - "**/skelton/**"
       - "**/.github/**"
+      - "**/img/**"  
 ```
 
 ---
@@ -173,6 +175,16 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 ---
 
 Now you are ready to start the Code Security Hands-on! 🚀
+You can try out vulnerable app snippets, make attack requests, check the vulnerability are exploitable.
+![Try](./img/000.png) ![Structure](./img/001.png) 
+
+
+
+
+### 7. Add Datadog Static SCA and SAST to GitHub Actions
+
+### 8. Add Datadog Runtime SCA, IAST and AAP to ECS Task Definition
+
 
 
 ---
