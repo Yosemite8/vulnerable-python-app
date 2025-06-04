@@ -173,6 +173,8 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 ---
 
 Now you are ready to start the Code Security Hands-on! 🚀
+
+
 ---
 ### Disclaimer
 This repository is intended solely for educational and demonstration purposes related to application security.
