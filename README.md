@@ -172,23 +172,33 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 
 > The app should show: `Flask app is running. Add your first vulnerability!`
 
----
 
 ## Congrats! Now you are ready to start the Code Security Hands-on! 🚀
 
 You can try out vulnerable app snippets, make attack requests, check the vulnerabilities are exploitable.
 ![Try](./img/000.png) ![Structure](./img/001.png) 
 
+
+
+
 ---
 ### 7. Lab#1 - Add Datadog Static SCA and SAST to GitHub Actions
+
+In Lab#1, your task is to create CI jobs in GitHub Actions for Static SCA(Software Composition Analysis) and SAST(Statis Application Security Testing)
+
 ![Lab1](./img/002.png) 
 
+Here is the docs to refer
 - [docs link](https://docs.datadoghq.com/security/code_security/)
 > Note
 > See docs instruction per SCA, SAST accordingly.
 
 ---
 ### 8. Lab#2 - Add Datadog Runtime SCA, IAST and AAP to ECS Task Definition
+
+In Lab#2, your task is to modify your ECS Task Definition to instrument your vulnerable python apps for Runtime SCA, IAST(Interactive Application Security Testing), and AAP (App and API Protection) 
+ECS Task Definition is modifiable in multiple ways, AWS Managed Console, IaC etc, Choose your preferable way. Ask Lab Master should make sure for required permissions to perform the modification in advance. If you face permission issues, ask Lab Master.
+
 ![Lab2](./img/003.png) 
 
 - [docs link](https://docs.datadoghq.com/security/guide/aws_fargate_config_guide/?tab=amazonecs#cloud-security-management)
