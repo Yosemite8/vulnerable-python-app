@@ -174,13 +174,13 @@ To access your deployed Flask app, check the public IP address or DNS name of th
 
 ---
 
-Now you are ready to start the Code Security Hands-on! 🚀
+## Congrats! Now you are ready to start the Code Security Hands-on! 🚀
 
 You can try out vulnerable app snippets, make attack requests, check the vulnerabilities are exploitable.
 ![Try](./img/000.png) ![Structure](./img/001.png) 
 
 ---
-### 7. Add Datadog Static SCA and SAST to GitHub Actions
+### 7. Lab#1 - Add Datadog Static SCA and SAST to GitHub Actions
 ![Lab1](./img/002.png) 
 
 - [docs link](https://docs.datadoghq.com/security/code_security/)
@@ -188,7 +188,7 @@ You can try out vulnerable app snippets, make attack requests, check the vulnera
 > See docs instruction per SCA, SAST accordingly.
 
 ---
-### 8. Add Datadog Runtime SCA, IAST and AAP to ECS Task Definition
+### 8. Lab#2 - Add Datadog Runtime SCA, IAST and AAP to ECS Task Definition
 ![Lab2](./img/003.png) 
 
 - [docs link](https://docs.datadoghq.com/security/guide/aws_fargate_config_guide/?tab=amazonecs#cloud-security-management)
