@@ -200,7 +200,7 @@ In Lab#2, your task is to modify your ECS Task Definition to instrument your vul
 
 ![Lab2](./img/003.png) 
 
-> Note
+> Note \n
 > ECS Task Definition is modifiable in multiple ways, AWS Managed Console, IaC etc, Choose your preferable way. Ask Lab Master should make sure for required permissions to perform the modification in advance. If you face permission issues, ask Lab Master.
 
 Here is the docs to refer
